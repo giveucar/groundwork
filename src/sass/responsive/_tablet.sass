@@ -1,5 +1,5 @@
 // =============================================
-//                   iPad
+//               Small Tablet
 //          Last Updated:2013-8-16
 // =============================================
 
@@ -9,290 +9,290 @@ $multi-column-classes: false !default
 $multi-column-names: "one-column" "two-column" "three-column" "four-column" "five-column" !default
 $inline-conditional-helpers: false !default
 
-=ipad
+=tablet
   @if $responsive
-    @media #{$ipad}
+    @media #{$tablet}
+      // responsive grid
+      //+grid-responsive
       // conditional helpers
       .d1
         display: none !important
       .i1
-        display: block
-      .t1
         display: none !important
+      .t1
+        display: block
       .m1
         display: none !important
-      .i0
+      .t0
         display: none !important
       //@if $inline-conditional-helpers
-        span.i1
+        span.t1
           display: inline !important
-      .no-border-ipad
+      .no-border-tablet
         border: 0
-      @if $size-classes
-        .small-ipad
+      //@if $size-classes
+        .small-tablet
           +_small
-        .medium-ipad
+        .medium-tablet
           +_medium
-        .large-ipad
+        .large-tablet
           +_large
       // @if $spacer-classes
       //   // spacer overrides
-      //   .zero-ipad
+      //   .zero-tablet
       //     +helper_reset
-      //   .pad-ipad
+      //   .pad-tablet
       //     +_pad
-      //   .pad-top-ipad
+      //   .pad-top-tablet
       //     +_pad-top
-      //   .pad-right-ipad
+      //   .pad-right-tablet
       //     +_pad-right
-      //   .pad-bottom-ipad
+      //   .pad-bottom-tablet
       //     +_pad-bottom
-      //   .pad-left-ipad
+      //   .pad-left-tablet
       //     +_pad-left
-        // .no-padding-ipad,
-        // .no-pad-ipad,
-        // .no-pad-ipad
+        // .no-pad-tablet
         //   +helper_reset(padding, $spacers: pad pad-top pad-right pad-bottom pad-left)
-        // .no-pad-top-ipad
+        // .no-pad-top-tablet
         //   +_pad-top(0)
-        // .no-pad-right-ipad
+        // .no-pad-right-tablet
         //   +_pad-right(0)
-        // .no-pad-bottom-ipad
+        // .no-pad-bottom-tablet
         //   +_pad-bottom(0)
-        // .no-pad-left-ipad
+        // .no-pad-left-tablet
         //   +_pad-left(0)
-        // .gapped-ipad
+        // .gapped-tablet
         //   +_gapped
-        // .gap-top-ipad
+        // .gap-top-tablet
         //   +_gap-top
-        // .gap-right-ipad
+        // .gap-right-tablet
         //   +_gap-right
-        // .gap-bottom-ipad
+        // .gap-bottom-tablet
         //   +_gap-bottom
-        // .gap-left-ipad
+        // .gap-left-tablet
         //   +_gap-left
-        // .no-margin-ipad,
-        // .no-gapped-ipad,
-        // .no-gap-ipad
+        // .no-margin-tablet,
+        // .no-gapped-tablet,
+        // .no-gap-tablet
         //   +helper_reset(margin, $spacers: gapped gap-top gap-right gap-bottom gap-left)
-        // .no-gap-top-ipad
+        // .no-gap-top-tablet
         //   +_gap-top(0)
-        // .no-gap-right-ipad
+        // .no-gap-right-tablet
         //   +_gap-right(0)
-        // .no-gap-bottom-ipad
+        // .no-gap-bottom-tablet
         //   +_gap-bottom(0)
-        // .no-gap-left-ipad
+        // .no-gap-left-tablet
         //   +_gap-left(0)
-        // .offset-ipad
+        // .offset-tablet
         //   +_offset
-        // .offset-top-ipad
+        // .offset-top-tablet
         //   +_offset-top
-        // .offset-right-ipad
+        // .offset-right-tablet
         //   +_offset-right
-        // .offset-bottom-ipad
+        // .offset-bottom-tablet
         //   +_offset-bottom
-        // .offset-left-ipad
+        // .offset-left-tablet
         //   +_offset-left
-        // .no-offset-top-ipad
+        // .no-offset-top-tablet
         //   +_offset-top(0)
-        // .no-offset-right-ipad
+        // .no-offset-right-tablet
         //   +_offset-right(0)
-        // .no-offset-bottom-ipad
+        // .no-offset-bottom-tablet
         //   +_offset-bottom(0)
-        // .no-offset-left-ipad
+        // .no-offset-left-tablet
         //   +_offset-left(0)
       @if $spacer-mod-classes
-        .half-pad-ipad
+        .half-pad-tablet
           +_pad(0.5)
-        .double-pad-ipad
+        .double-pad-tablet
           +_pad(2)
-        // .triple-pad-ipad
+        // .triple-pad-tablet
         //   +_pad(3)
-        // .half-pad-top-ipad
+        // .half-pad-top-tablet
         //   +_pad-top(0.5)
-        // .double-pad-top-ipad
+        // .double-pad-top-tablet
         //   +_pad-top(2)
-        // .triple-pad-top-ipad
+        // .triple-pad-top-tablet
         //   +_pad-top(3)
-        // .half-pad-right-ipad
+        // .half-pad-right-tablet
         //   +_pad-right(0.5)
-        // .double-pad-right-ipad
+        // .double-pad-right-tablet
         //   +_pad-right(2)
-        // .triple-pad-right-ipad
+        // .triple-pad-right-tablet
         //   +_pad-right(3)
-        // .half-pad-bottom-ipad
+        // .half-pad-bottom-tablet
         //   +_pad-bottom(0.5)
-        // .double-pad-bottom-ipad
+        // .double-pad-bottom-tablet
         //   +_pad-bottom(2)
-        // .triple-pad-bottom-ipad
+        // .triple-pad-bottom-tablet
         //   +_pad-bottom(3)
-        // .half-pad-left-ipad
+        // .half-pad-left-tablet
         //   +_pad-left(0.5)
-        // .double-pad-left-ipad
+        // .double-pad-left-tablet
         //   +_pad-left(2)
-        // .triple-pad-left-ipad
+        // .triple-pad-left-tablet
         //   +_pad-left(3)
-        // .half-gapped-ipad
+        // .half-gapped-tablet
         //   +_gapped(0.5)
-        // .double-gapped-ipad
+        // .double-gapped-tablet
         //   +_gapped(2)
-        // .triple-gapped-ipad
+        // .triple-gapped-tablet
         //   +_gapped(3)
-        // .half-gap-top-ipad
+        // .half-gap-top-tablet
         //   +_gap-top(0.5)
-        // .double-gap-top-ipad
+        // .double-gap-top-tablet
         //   +_gap-top(2)
-        // .triple-gap-top-ipad
+        // .triple-gap-top-tablet
         //   +_gap-top(3)
-        // .half-gap-right-ipad
+        // .half-gap-right-tablet
         //   +_gap-right(0.5)
-        // .double-gap-right-ipad
+        // .double-gap-right-tablet
         //   +_gap-right(2)
-        // .triple-gap-right-ipad
+        // .triple-gap-right-tablet
         //   +_gap-right(3)
-        // .half-gap-bottom-ipad
+        // .half-gap-bottom-tablet
         //   +_gap-bottom(0.5)
-        // .double-gap-bottom-ipad
+        // .double-gap-bottom-tablet
         //   +_gap-bottom(2)
-        // .triple-gap-bottom-ipad
+        // .triple-gap-bottom-tablet
         //   +_gap-bottom(3)
-        // .half-gap-left-ipad
+        // .half-gap-left-tablet
         //   +_gap-left(0.5)
-        // .double-gap-left-ipad
+        // .double-gap-left-tablet
         //   +_gap-left(2)
-        // .triple-gap-left-ipad
+        // .triple-gap-left-tablet
         //   +_gap-left(3)
-        // .half-offset-ipad
+        // .half-offset-tablet
         //   +_offset(0.5)
-        // .double-offset-ipad
+        // .double-offset-tablet
         //   +_offset(2)
-        // .triple-offset-ipad
+        // .triple-offset-tablet
         //   +_offset(3)
-        // .half-offset-top-ipad
+        // .half-offset-top-tablet
         //   +_offset-top(0.5)
-        // .double-offset-top-ipad
+        // .double-offset-top-tablet
         //   +_offset-top(2)
-        // .triple-offset-top-ipad
+        // .triple-offset-top-tablet
         //   +_offset-top(3)
-        // .half-offset-right-ipad
+        // .half-offset-right-tablet
         //   +_offset-right(0.5)
-        // .double-offset-right-ipad
+        // .double-offset-right-tablet
         //   +_offset-right(2)
-        // .triple-offset-right-ipad
+        // .triple-offset-right-tablet
         //   +_offset-right(3)
-        // .half-offset-bottom-ipad
+        // .half-offset-bottom-tablet
         //   +_offset-bottom(0.5)
-        // .double-offset-bottom-ipad
+        // .double-offset-bottom-tablet
         //   +_offset-bottom(2)
-        // .triple-offset-bottom-ipad
+        // .triple-offset-bottom-tablet
         //   +_offset-bottom(3)
-        // .half-offset-left-ipad
+        // .half-offset-left-tablet
         //   +_offset-left(0.5)
-        // .double-offset-left-ipad
+        // .double-offset-left-tablet
         //   +_offset-left(2)
-        // .triple-offset-left-ipad
+        // .triple-offset-left-tablet
         //   +_offset-left(3)
       @if $positioning-classes
-        .fixed-ipad
+        .fixed-tablet
           +_fixed
-        // .fixed-top-ipad
+        // .fixed-top-tablet
         //   +_fixed(top)
-        // .fixed-right-ipad
+        // .fixed-right-tablet
         //   +_fixed(right)
-        // .fixed-bottom-ipad
+        // .fixed-bottom-tablet
         //   +_fixed(bottom)
-        // .fixed-left-ipad
+        // .fixed-left-tablet
         //   +_fixed(left)
-        // .fixed-middle-ipad
+        // .fixed-middle-tablet
         //   +_fixed(middle)
-        // .fixed-center-ipad
+        // .fixed-center-tablet
         //   +_fixed(center)
-        .absolute-ipad
+        .absolute-tablet
           +_absolute
-        // .absolute-top-ipad
+        // .absolute-top-tablet
         //   +_absolute(top)
-        // .absolute-right-ipad
+        // .absolute-right-tablet
         //   +_absolute(right)
-        // .absolute-bottom-ipad
+        // .absolute-bottom-tablet
         //   +_absolute(bottom)
-        // .absolute-left-ipad
+        // .absolute-left-tablet
         //   +_absolute(left)
-        // .absolute-middle-ipad
+        // .absolute-middle-tablet
         //   +_absolute(middle)
-        // .absolute-center-ipad
+        // .absolute-center-tablet
         //   +_absolute(center)
-        // .static-ipad
+        // .static-tablet
         //   +_static
       @if $layout-classes
-        .inline-ipad
+        .inline-tablet
           +_inline
-        .block-ipad
+        .block-tablet
           +_block
-        .clear-ipad
+        .clear-tablet
           +_clear
-        .center-ipad
+        .center-tablet
           +_center
-        .pull-right-ipad
+        .pull-right-tablet
           +_pull-right
-        .pull-left-ipad
+        .pull-left-tablet
           +_pull-left
-        .pull-none-ipad
+        .pull-none-tablet
           +_pull-none
       //@if $border-classes
-        .bordered-ipad
+        .bordered-tablet
           +_bordered
-        .border-top-ipad
+        .border-top-tablet
           +_border-top
-        .border-right-ipad
+        .border-right-tablet
           +_border-right
-        .border-bottom-ipad
+        .border-bottom-tablet
           +_border-bottom
-        .border-left-ipad
+        .border-left-tablet
           +_border-left
       @if $typography-helpers
-        .align-top-ipad
+        .align-top-tablet
           +_align-top
-        .align-right-ipad
+        .align-right-tablet
           +_align-right
-        .align-bottom-ipad
+        .align-bottom-tablet
           +_align-bottom
-        .align-left-ipad
+        .align-left-tablet
           +_align-left
-        .align-center-ipad
+        .align-center-tablet
           +_align-center
-        .justify-ipad
+        .justify-tablet
           +_justify
-        .truncate-ipad
+        .truncate-tablet
           +_truncate
       //@if $rotation-classes
-        .rotate-90-ipad
+        .rotate-90-tablet
           +_rotate-90
-        .rotate-90-ctr-ipad
+        .rotate-90-ctr-tablet
           +_rotate-90-ctr
-        .rotate-180-ipad
+        .rotate-180-tablet
           +_rotate-180
-        .rotate-180-ctr-ipad
+        .rotate-180-ctr-tablet
           +_rotate-180-ctr
-        .rotate-270-ipad
+        .rotate-270-tablet
           +_rotate-270
-        .rotate-270-ctr-ipad
+        .rotate-270-ctr-tablet
           +_rotate-270-ctr
-        .rotate-360-ipad
+        .rotate-360-tablet
           +_rotate-360
-        .rotate-360-ipad
+        .rotate-360-ctr-tablet
           +_rotate-360-ctr
       //@if $multi-column-classes
         @for $i from 1 through length($multi-column-names)
-          .#{nth($multi-column-names, $i)}-ipad, .#{nth($multi-column-names, $i)}s-ipad
+          .#{nth($multi-column-names, $i)}-tablet, .#{nth($multi-column-names, $i)}s-tablet
             +_multi-column($i)
       @content
 
 ///////////////////////
-//       ipad        //
+//    small tablet   //
 ///////////////////////
 
 @if $responsive
-  +ipad
-    // do not remove -- required for ipad helpers
+  +tablet
+    // do not remove -- required for tablet helpers
     @if $navigation-classes
-      +hamburger-mode(":not(.tablet):not(.mobile)")
+      +hamburger-mode(":not(.mobile)")

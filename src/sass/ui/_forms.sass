@@ -5,7 +5,7 @@
 
 $form-tags: true !default
 $form-classes: false !default
-$form-elements: "fieldset" "legend" "label" "input" "textarea" !default
+$form-elements: "label" "input" !default
 $default-radius: 4px !default
 
 $fieldset-color: darken(white, 2%) !default
@@ -30,35 +30,35 @@ $question-background: #f0e6f4 !default
 $question-border: #f1dbfa !default
 
 // shared defaults
-$aria-selectors: true !default
+$aria-selectors: false !default
 
 %fieldset
   background-color: $fieldset-color
   border: 1px solid $border-color
-  padding: $gutter
-  +rounded($default-radius)
+  // padding: $gutter
+  //+rounded($default-radius)
 
 %legend
   font-weight: 900
   margin-bottom: 0
 
 %label
-  display: block
-  padding: 0.4em 0.2em
+  display: inline-block
+  // padding: 0.4em 0.2em
 
 %field
   display: block
   width: 100%
   max-width: 100%
   margin: 0
-  padding: 0.4em
-  font-family: monospace
+  // padding: 0.4em
+  // font-family: monospace
   font-size: 1em
   line-height: 1.5
   height: 2.25em
   background: white
   border: 1px solid $border-color
-  +rounded($default-radius)
+  //+rounded($default-radius)
 
 %input
   @extend %field
@@ -67,7 +67,7 @@ $aria-selectors: true !default
   &[type="checkbox"], &[type="radio"]
     @extend %zero, %inline-block
     border: 0
-    +rounded(0)
+    //+rounded(0)
 
 %textarea
   height: 10em
@@ -92,58 +92,58 @@ $aria-selectors: true !default
   background: $success-color
   border-color: $success-color
 
-%prefix, %suffix
-  display: block
-  position: relative
-  z-index: 1
-  width: 100%
-  overflow: hidden
-  white-space: nowrap
-  text-overflow: ellipsis
-  margin: 0
-  padding: 0.4em
-  font-family: monospace
-  line-height: 1.25
-  height: 2.25em
-  text-align: center
-  color: gray
-  background: darken(white, 12.5%)
-  border: 1px solid darken(white, 17.5%)
+// %prefix, %suffix
+//   display: block
+//   position: relative
+//   z-index: 1
+//   width: 100%
+//   overflow: hidden
+//   white-space: nowrap
+//   text-overflow: ellipsis
+//   margin: 0
+//   // padding: 0.4em
+//   // font-family: monospace
+//   line-height: 1.25
+//   height: 2.25em
+//   text-align: center
+//   color: gray
+//   background: darken(white, 12.5%)
+//   border: 1px solid darken(white, 17.5%)
 
-%prefix
-  left: 2px
-  +rounded($default-radius 0 0 $default-radius)
+// %prefix
+//   left: 2px
+//   //+rounded($default-radius 0 0 $default-radius)
 
-%suffix
-  left: -2px
-  +rounded(0 $default-radius $default-radius 0)
+// %suffix
+//   left: -2px
+//   //+rounded(0 $default-radius $default-radius 0)
 
-.prefix
-  @extend %prefix
+// .prefix
+//   @extend %prefix
 
-.suffix
-  @extend %suffix
+// .suffix
+//   @extend %suffix
 
-.error, .invalid
+//.error, .invalid
   input, select, textarea
     @extend %error-block
-  .prefix, .suffix
-    @extend %error-block-prefix
+  // .prefix, .suffix
+  //   @extend %error-block-prefix
 
-input, select, textarea
+//input, select, textarea
   &.invalid, &.error
     @extend %error-block
   @if $aria-selectors
     &[aria-invalid="true"]
       @extend %error-block
 
-.success, .valid
+//.success, .valid
   input, select, textarea
     @extend %success-block
-  .prefix, .suffix
-    @extend %success-block-prefix
+  // .prefix, .suffix
+  //   @extend %success-block-prefix
 
-input, select, textarea
+//input, select, textarea
   &.valid, &.success
     @extend %success-block
   @if $aria-selectors

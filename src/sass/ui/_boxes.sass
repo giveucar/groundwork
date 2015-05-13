@@ -11,11 +11,11 @@ $size-helpers: "small" "medium" "large" !default
 $default-radius: 4px !default
 
 %box
-  @extend %relative, %padded
-  background: $button-color
-  color: $button-text
-  border: 1px solid $border-color
-  +rounded($default-radius)
+  @extend %relative
+  //background: $button-color
+  //color: $button-text
+  //border: 1px solid $border-color
+  //+rounded($default-radius)
   %links
     color: inherit
 
@@ -37,36 +37,36 @@ $default-radius: 4px !default
 %box-info
   background-color: $info-background
   color: $info-color
-  border-color: $info-border
+  //border-color: $info-border
 
 %box-question
   background-color: $question-background
   color: $question-color
-  border-color: $question-border
+  //border-color: $question-border
 
 %box-alert
   background-color: $alert-background
   color: $alert-color
-  border-color: $alert-border
+  //border-color: $alert-border
 
 %box-warning
   background: $warning-background
   color: $warning-color
-  border-color: $warning-border
+  //border-color: $warning-border
 
 %box-error
   background: $error-background
   color: $error-color
-  border-color: $error-border
+  //border-color: $error-border
 
 %box-success
   background: $success-background
   color: $success-color
-  border-color: $success-border
+  //border-color: $success-border
 
 @for $i from 1 through length($modifier-name)
   %box-#{nth($modifier-name, $i)}
-    border-color: nth($modifier-code, $i)
+    //border-color: nth($modifier-code, $i)
     background-color: lighten(nth($modifier-code, $i), 10%)
     color: nth($modifier-text, $i)
 

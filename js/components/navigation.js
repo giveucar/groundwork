@@ -1,3 +1,4 @@
+
 /*
  *
  *  Responsive Navigation by Gary Hepting
@@ -6,8 +7,7 @@
  *
  *  Copyright © 2013 Gary Hepting. All rights reserved.
  *
-*/
-
+ */
 
 (function() {
   var ResponsiveNavigation, responsiveNavigationIndex;
@@ -66,9 +66,9 @@
   })();
 
   $(function() {
-    var mouseBindings, responsiveNavigationElements, touchBindings;
+    var mouseBindings;
     mouseBindings = function() {
-      $('body').on('mouseenter', '.nav:not(.vertical) li[role="menu"]', function(e) {
+      $('.nav').on('mouseenter', '.nav:not(.vertical) li[role="menu"]', function(e) {
         var expandedSiblings, targetMenu;
         $('.nav:not(.vertical)').not(this).each(function() {
           if (!$(this).find('button.hamburger').is(':visible')) {
@@ -83,57 +83,56 @@
           return targetMenu.attr('aria-expanded', 'true');
         }
       });
-      return $('body').on('mouseleave', '.nav:not(.vertical) li[role="menu"]', function(e) {
-        var _this = this;
+      return $('.nav').on('mouseleave', '.nav:not(.vertical) li[role="menu"]', function(e) {
         if (!$(this).parents('.nav').find('button.hamburger').is(':visible')) {
-          return window.delayMenuClose = setTimeout(function() {
-            return $(_this).find('ul[aria-expanded="true"]').attr('aria-expanded', 'false');
-          }, 500);
+          return window.delayMenuClose = setTimeout((function(_this) {
+            return function() {
+              return $(_this).find('ul[aria-expanded="true"]').attr('aria-expanded', 'false');
+            };
+          })(this), 500);
         }
       });
     };
-    touchBindings = function() {
-      $('body').on('click', '.nav li[role="menu"] > a,\
-                           .nav li[role="menu"] > button', function(e) {
-        var list, menu;
-        list = $(this).siblings('ul');
-        menu = $(this).parent('[role="menu"]');
-        if (list.attr('aria-expanded') !== 'true') {
-          list.attr('aria-expanded', 'true');
-        } else {
-          list.attr('aria-expanded', 'false');
-          list.find('[aria-expanded="true"]').attr('aria-expanded', 'false');
-        }
-        if (menu.attr('aria-pressed') !== 'true') {
-          menu.attr('aria-pressed', 'true');
-        } else {
-          menu.attr('aria-pressed', 'false');
-          menu.find('[aria-pressed="true"]').attr('aria-pressed', 'false');
-          menu.find('[aria-expanded="true"]').attr('aria-expanded', 'false');
-        }
-        return e.preventDefault();
-      });
-      return $('body').on('click', '.nav button.hamburger', function(e) {
-        var list;
-        list = $(this).siblings('ul');
-        if (list.attr('aria-expanded') !== 'true') {
-          list.attr('aria-expanded', 'true');
-        } else {
-          list.attr('aria-expanded', 'false');
-          list.find('[aria-pressed="true"]').attr('aria-pressed', 'false');
-          list.find('[aria-expanded="true"]').attr('aria-expanded', 'false');
-        }
-        return e.preventDefault();
-      });
-    };
-    responsiveNavigationElements = [];
-    $('.nav').each(function() {
-      return responsiveNavigationElements.push(new ResponsiveNavigation(this));
-    });
-    touchBindings();
-    if (!Modernizr.touch) {
-      return mouseBindings();
-    }
+
+    /*
+    touchBindings = ->
+      $('.nav').on 'click', '.nav li[role="menu"] > a,
+                             .nav li[role="menu"] > button', (e) ->
+        list = $(@).siblings('ul')
+        menu = $(@).parent('[role="menu"]')
+        if list.attr('aria-expanded') != 'true'
+          list.attr('aria-expanded', 'true')
+        else
+          list.attr('aria-expanded', 'false')
+          list.find('[aria-expanded="true"]').attr('aria-expanded', 'false')
+        if menu.attr('aria-pressed') != 'true'
+          menu.attr('aria-pressed', 'true')
+        else
+          menu.attr('aria-pressed', 'false')
+          menu.find('[aria-pressed="true"]').attr('aria-pressed', 'false')
+          menu.find('[aria-expanded="true"]').attr('aria-expanded', 'false')
+        e.preventDefault()
+    
+      $('.nav').on 'click', '.nav button.hamburger', (e) ->
+        list = $(@).siblings('ul')
+        if list.attr('aria-expanded') != 'true'
+          list.attr('aria-expanded', 'true')
+        else
+          list.attr('aria-expanded', 'false')
+          list.find('[aria-pressed="true"]').attr('aria-pressed', 'false')
+          list.find('[aria-expanded="true"]').attr('aria-expanded', 'false')
+        e.preventDefault()
+     */
+    return setTimeout((function(_this) {
+      return function() {
+        var responsiveNavigationElements;
+        responsiveNavigationElements = [];
+        $('.nav').each(function() {
+          return responsiveNavigationElements.push(new ResponsiveNavigation(this));
+        });
+        return mouseBindings();
+      };
+    })(this), 1000);
   });
 
 }).call(this);

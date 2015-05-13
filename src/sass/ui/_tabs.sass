@@ -3,9 +3,9 @@
 //          Last Updated:2013-8-26
 // =============================================
 
-$tab-classes: true !default
+$tab-classes: false !default
 $tab-states: "active" !default
-$aria-selectors: true !default
+$aria-selectors: false !default
 $tab-color: lighten(gray, 32.5%) !default
 $tab-text: darken(gray, 15%) !default
 $tab-border-color: lighten(gray, 22.5%) !default
@@ -30,7 +30,7 @@ $default-radius: 4px !default
   background: $tab-color
   border: $border-thickness $border-style $tab-border-color
   color: $tab-text
-  +font-stack
+  //+font-stack
   font-weight: bold
   text-decoration: none
   cursor: pointer
@@ -38,10 +38,10 @@ $default-radius: 4px !default
   width: auto
   height: auto
   text-align: center
-  +rounded($default-radius $default-radius 0 0)
+  //+rounded($default-radius $default-radius 0 0)
   &:hover, &:focus
     @extend %tab-hover
-    +transition(background-color 0.25s ease-out)
+    // +transition(background-color 0.25s ease-out)
 
 %tab-hover
   background: $tab-active
@@ -53,15 +53,15 @@ $default-radius: 4px !default
   text-decoration: none
   color: $tabpanel-text
   border-bottom-color: $tabpanel-background
-  +transition(none)
+  // +transition(none)
 
 %tabpanel
-  @extend %padded, %clear
+  @extend %pad, %clear
   display: none
   background: $tabpanel-background
   border: $border-thickness $border-style $tab-border-color
   color: $tabpanel-text
-  +rounded(0 $default-radius $default-radius $default-radius)
+  //+rounded(0 $default-radius $default-radius $default-radius)
   &.active, &.on
     display: block
 
@@ -77,10 +77,10 @@ $default-radius: 4px !default
       +state(disabled, normal, desaturate(nth($modifier-code, $i), 20%))
 
 @if $tab-classes
-  .no-js
-    .tabs
-      > div
-        display: block
+  //.no-js
+  .tabs
+    > div
+      display: block
   .tabs
     &:not(.accordion)
       @extend %relative

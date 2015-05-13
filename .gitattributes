@@ -1,0 +1,3 @@
+*.min.* binary
+*.map binary
+dist/* binary

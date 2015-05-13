@@ -8,8 +8,8 @@ module.exports = (grunt) ->
         files: '**/*.jade'
         tasks: ['jade']
       compass:
-        files: '**/*.sass'
-        tasks: ['compass', 'autoprefixer', 'cssmin']
+        files: '**/groundwork.sass'
+        tasks: ['compass', 'cssmin']
       coffee:
         files: '**/*.coffee'
         tasks: ['coffee', 'uglify']
@@ -43,27 +43,36 @@ module.exports = (grunt) ->
       individual:
         expand: true
         cwd: 'src/coffee'
-        src: ['**/*.coffee', '!groundwork.all.coffee']
+        src: [
+          '**/*.coffee',
+          '!groundwork.all.coffee'
+        ]
         dest: 'js'
         ext: '.js'
       concatenated:
         options:
-          join: true
+          join: false
         files:
-          "js/groundwork.all.js": ["src/coffee/components/*.coffee", "src/coffee/plugins/*.coffee"]
+          "js/groundwork.all.js": ["src/coffee/components/navigation.coffee"
+#          , "src/coffee/plugins/*.coffee"
+          ]
 
     uglify:
+      options:
+        compress: false
       minify:
+        options:
+          compress: false
         files:
-          'js/groundwork.all.js': ['js/groundwork.all.js']
+          'js/groundwork.all.min.js': ['js/groundwork.all.js']
 
     cssmin:
       minify:
         expand: true
         cwd: 'css/'
-        src: ['*.css', '!*.min.css']
+        src: ['groundwork.css', '!*.min.css']
         dest: 'css/'
-        ext: '.css'
+        ext: '.min.css'
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -75,5 +84,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
 
   grunt.registerTask 'default',           ['build']
-  grunt.registerTask 'build',             ['compass', 'autoprefixer', 'coffee:individual', 'coffee:concatenated', 'cssmin', 'uglify']
+  grunt.registerTask 'build',             [
+    'compass',
+    'autoprefixer',
+    # 'coffee:concatenated',
+    'cssmin',
+    # 'uglify'
+  ]
   grunt.registerTask 'docs',              ['jade']

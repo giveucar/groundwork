@@ -5,7 +5,7 @@
 
 $reset: true !default
 
-$reset-elements: "html" "body" "div" "span" "header" "footer" "aside" "nav" "menu" "main" "section" "article" "details" "h1" "h2" "h3" "h4" "h5" "h6" "p" "ol" "ul" "li" "dl" "dt" "dd" "em" "small" "big" "strong" "b" "u" "i" "sub" "sup" "del" "strike" "q" "blockquote" "cite" "time" "address" "code" "pre" "a" "img" "center" "hr" "form" "fieldset" "legend" "label" "input" "textarea" "button" "table" "caption" "tbody" "thead" "tfoot" "tr" "th" "td" "iframe" "object" "canvas" "audio" "video" "embed" !default
+$reset-elements: "html" "body" "div" "span" "header" "footer" "aside" "nav" "menu" "main" "section" "article" "details" "h1" "h2" "h3" "h4" "h5" "h6" "p" "ol" "ul" "li" "dl" "dt" "dd" "em" "small" "big" "strong" "b" "u" "i" "sub" "sup" "del" "strike" "q" "blockquote" "cite" "time" "address" "code" "pre" "a" "img" "center" "form" "fieldset" "legend" "label" "input" "textarea" "table" "caption" "tbody" "thead" "tfoot" "tr" "th" "td" "iframe" "object" "canvas" "audio" "video" "embed" !default
 
 %everything
   +box-sizing(border-box)
@@ -45,17 +45,17 @@ $reset-elements: "html" "body" "div" "span" "header" "footer" "aside" "nav" "men
   // =======================================================
   //
 
-%document
-  -webkit-text-size-adjust: none
+//%document
+//  -webkit-text-size-adjust: none
 
-%html5-elements
-  margin: 0
-  padding: 0
-  border: 0
-  font: inherit
-  vertical-align: baseline
+//%html5-elements
+//  margin: 0
+//  // padding: 0
+//  border: 0
+//  font: inherit
+//  vertical-align: baseline
 
-%block-elements
+//%block-elements
   display: block
 
 %table-elements
@@ -66,13 +66,13 @@ $reset-elements: "html" "body" "div" "span" "header" "footer" "aside" "nav" "men
   *, *:after, *:before
     @extend %everything
   // reset all $reset-elements (configured in _variables.sass)
-  @for $i from 1 through length($reset-elements)
-    #{nth($reset-elements, $i)}
-      @extend %html5-elements
-  header, footer, aside, menu, nav, section, article, details
-    @extend %block-elements
+  //@for $i from 1 through length($reset-elements)
+  //  #{nth($reset-elements, $i)}
+  //    @extend %html5-elements
+  //header, footer, aside, menu, nav, section, article, details
+  //  @extend %block-elements
   table
     @extend %table-elements
-  script
-    display: none !important
+  //script
+  //  display: none !important
   // ensure embedded script tags don't mess up inline lists, etc.

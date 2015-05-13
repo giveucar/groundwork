@@ -1,5 +1,5 @@
 // ============================================
-//   GroundworkCSS Responsive by Gary Hepting
+//       GroundworkCSS Type by Gary Hepting
 //          Last Updated:2013-9-27
 // ============================================
 
@@ -13,18 +13,25 @@
 
 // constants, defaults, mixins, breakpoints, color palette
 @import base/helpers
+
+$grid-classes: false !default
+$grid-adapter-classes: false !default
+$responsive: false !default
+
 @import base/grid
 @import icons/font-awesome/variables
 @import icons/font-awesome/path
 @import icons/font-awesome/core
 @import icons/font-awesome/extras
 
-// Responsive Components
-@import responsive/all-responsive
+// UI
+// @import ui/all-ui
 
-// individual responsive modules
-// @import "responsive/helpers-responsive";
-// @import "responsive/desktop";
-// @import "responsive/ipad";
-// @import "responsive/small-tablet";
-// @import "responsive/mobile";
+// individual UI modules
+// @import "ui/boxes";
+// @import "ui/buttons";
+// @import "ui/forms";
+// @import "ui/messages";
+// @import "ui/nav";
+// @import "ui/tables";
+// @import "ui/tabs";

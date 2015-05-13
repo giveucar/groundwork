@@ -8,16 +8,16 @@
 // typography defaults
 $type-tags: true !default
 
-$type-elements: "h1" "h2" "h3" "h4" "h5" "h6" "p" "ul" "ol" "dl" "q" "blockquote" "cite" "small" "big" "b" "strong" "em" "sup" "sub" "del" "strike" "code" "pre" !default
-$type-colors: true !default
+$type-elements: "h1" "h2" "h3" "h4" "h5" "h6" "p" "ul" "ol" "b" "em" "sup" "sub" "del" "strike" "code" "pre" !default
+$type-colors: false !default
 $type-classes: false !default
 
-$type-classnames: "h1" "h2" "h3" "h4" "h5" "h6" "p" "ul" "ol" "dl" "q" "blockquote" "cite" "small" "big" "large" "b" "bold" "strong" "em" "italic" "sup" "sub" "del" "strike" "code" "pre" "invalid" "valid" "unstyled" !default
+$type-classnames: "h1" "h2" "h3" "h4" "h5" "h6" "p" "ul" "ol" "b" "strong" "em" "sup" "sub" "del" "strike" "code" "pre" !default
 $quote-color: $font-color !default
 $quote-background: $border-color !default
-$quote-font: "source-sans-pro" !default
-$styled-lists: true !default
-$multi-column-classes: true !default
+//$quote-font: "source-sans-pro" !default
+$styled-lists: false !default
+$multi-column-classes: false !default
 $multi-column-names: "one-column" "two-column" "three-column" "four-column" "five-column" !default
 $info-color: #3a87ad !default
 $alert-text: white !default
@@ -29,7 +29,7 @@ $ui-states: "info" "alert" "warning" "error" "success" "question" !default
 $ui-icons: "\f05a" "\f06a" "\f071" "\f057" "\f058" "\f059" !default
 $ui-states-colors: $info-color $alert-color $warning-color $error-color $success-color $question-color !default
 $ui-states-backgrounds: $info-background $alert-background $warning-background $error-background $success-background $question-background !default
-$ui-states-color-classes: true !default
+$ui-states-color-classes: false !default
 $font-size: 14px !default
 $line-height: 1.5 !default
 $heading-line-height: 1.3 !default
@@ -50,11 +50,11 @@ $selection-text: white !default
 $border-thickness: 1px !default
 $border-style: solid !default
 $border-color: #dddddd !default
-$gutter: 10px !default
+$gutter: 5px !default
 $default-radius: 4px !default
 $placeholderText-fallback: true !default
 
-%document
+//%document
   font-family: $font-family
   font-size: $font-size
   line-height: $line-height
@@ -66,19 +66,20 @@ $placeholderText-fallback: true !default
   text-shadow: none
 
 %links
-  color: $link-color
+  color: #489ac1
   @if $links-underlined == false
     text-decoration: none
-  +transition(color 0.25s)
-  &:hover, &:focus
+  // +transition(color 0.25s)
+  //&:hover, &:focus
     color: $link-active
     @if $links-active-underlined
       text-decoration: underline
 
 %heading
-  margin-bottom: $gutter * 1.5
+  margin: 0
+  // margin-bottom: $gutter * 1.5
   line-height: $heading-line-height
-  @extend %#{$headings-font}
+  //@extend %#{$headings-font}
 
 %h1
   @extend %heading
@@ -103,59 +104,59 @@ $placeholderText-fallback: true !default
 %h6
   @extend %heading
   font-size: 1.1666666667em
-  text-transform: uppercase
+  //text-transform: uppercase
 
-%p, %ul, %ol, %dl
-  margin-bottom: 10px
+%p, %ul, %ol
+  margin-bottom: 5px
   font-weight: normal
   line-height: 1.5
 
 %list
-  margin-left: 20px
+  //margin-left: 20px
   %list-item
     display: list-item
 
-%dl
+//%dl
   %dt
     font-weight: bold
   %dd
     padding-left: 1em
     margin-bottom: $gutter
 
-%ul-checklist
-  @extend %unstyled
-  margin-left: 0
-  %checklist-item
-    &:before
-      content: $icon-check-empty
-      display: inline-block
-      width: 1.1em
-      margin-right: 0.25em
-      +icon-FontAwesome
-      font-size: 1.2em
-      vertical-align: baseline
-      background-image: none
-      background-position: 0% 0%
-      background-repeat: repeat
-      margin-top: 0
-    &[aria-checked~="true"], &[data-checked~="true"], &[checked="checked"], &.checked, &.completed
-      &:before
-        content: $icon-check
-  &:not([readonly])
-    %checklist-item
-      &:not([readonly])
-        cursor: pointer
+//%ul-checklist
+//  @extend %unstyled
+//  margin-left: 0
+//  %checklist-item
+//    &:before
+//      content: $fa-check-empty
+//      display: inline-block
+//      width: 1.1em
+//      margin-right: 0.25em
+//      +fa-FontAwesome
+//      font-size: 1.2em
+//      vertical-align: baseline
+//      background-image: none
+//      background-position: 0% 0%
+//      background-repeat: repeat
+//      margin-top: 0
+//    &[aria-checked~="true"], &[data-checked~="true"], &[checked="checked"], &.checked, &.completed
+//      &:before
+//        content: $fa-check
+//  &:not([readonly])
+//    %checklist-item
+//      &:not([readonly])
+//        cursor: pointer
 
-%ul-list
+//%ul-list
   @extend %unstyled
   margin-left: 0
   %list-item
     &:before
-      content: $icon-circle
+      content: $fa-circle
       display: inline-block
       width: 1.1em
       margin-right: 0.25em
-      +icon-FontAwesome
+      +fa-FontAwesome
       font-size: 0.6em
       vertical-align: middle
       background-image: none
@@ -163,7 +164,7 @@ $placeholderText-fallback: true !default
       background-repeat: repeat
       margin-top: 0
 
-%ol-list
+//%ol-list
   @extend %unstyled
   counter-reset: li
   margin-left: 1.5em
@@ -185,7 +186,7 @@ $placeholderText-fallback: true !default
       color: $background-color
       background: $font-color
       font-weight: bold
-      +rounded($default-radius)
+      //+rounded($default-radius)
 
 %sup
   @extend %relative, %small
@@ -238,7 +239,7 @@ $placeholderText-fallback: true !default
   @extend %relative, %bold
   padding: 1.3em 4em 1em
   color: $quote-color
-  +font-stack($quote-font)
+  // +font-stack($quote-font)
   font-size: 1.15em
   background: $quote-background
   +border-radius($default-radius)
@@ -317,42 +318,42 @@ $placeholderText-fallback: true !default
   color: $question-color
 
 // responsive headings
-.js
+//.js
   .responsive:not(table)
     @extend %truncate
-    +transition(font 0.25s)
+    // +transition(font 0.25s)
 
 @if $type-tags
-  body
+  //body
     @extend %document
-  \::-moz-selection
+  //\::-moz-selection
     +_selection
-  \::selection
+  //\::selection
     +_selection
-  a, a:visited
+  a
     @extend %links
-  ul, ol
+  //ul, ol
     @extend %list
     li
       @extend %list-item
-  dl
+  //dl
     @extend %dl
     dt
       @extend %dt
     dd
       @extend %dd
-  abbr[title], dfn[title],
-  abbr[data-title], dfn[data-title]
+  //abbr[title], dfn[title],
+  //abbr[data-title], dfn[data-title]
     @extend %abbr
-  @for $i from 1 through length($type-elements)
+  //@for $i from 1 through length($type-elements)
     #{nth($type-elements, $i)}
       @extend %#{nth($type-elements, $i)}
 
-@if $styled-lists
+//@if $styled-lists
   ul, ol
     &.unstyled
       @extend %unstyled
-  ul.list
+  //ul.list
     @extend %ul-list
     > li
       @extend %list-item
@@ -362,11 +363,11 @@ $placeholderText-fallback: true !default
             content: #{nth($ui-icons, $i)}
             // see $ui-icons
             font-size: 1.2em
-  ul.checklist
+  //ul.checklist
     @extend %ul-checklist
     > li
       @extend %checklist-item
-  ol.list
+  //ol.list
     @extend %ol-list
     @if $type-colors
       @for $i from 1 through length($modifier-name)
@@ -462,17 +463,17 @@ $placeholderText-fallback: true !default
   @for $i from 1 through length($modifier-name)
     .#{nth($modifier-name, $i)}
       color: nth($modifier-code, $i)
-    .#{nth($modifier-name, $i)}-bg
-      background: nth($modifier-code, $i)
-      color: nth($modifier-text, $i)
+    // .#{nth($modifier-name, $i)}-bg
+    //   background: nth($modifier-code, $i)
+    //   color: nth($modifier-text, $i)
 
 @if $ui-states-color-classes
   @for $i from 1 through length($ui-states)
     .#{nth($ui-states, $i)}
       @extend %#{nth($ui-states, $i)}
-    .#{nth($ui-states, $i)}-bg
-      background: nth($ui-states-backgrounds, $i)
-      color: nth($ui-states-colors, $i)
+    // .#{nth($ui-states, $i)}-bg
+    //   background: nth($ui-states-backgrounds, $i)
+    //   color: nth($ui-states-colors, $i)
 
 @if $type-classes
   @for $i from 1 through length($type-classnames)

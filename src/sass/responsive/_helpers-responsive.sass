@@ -3,26 +3,26 @@
 //          Last Updated:2013-8-16
 // =============================================
 
-$responsive: true !default
+$responsive: false !default
 $inline-conditional-helpers: false !default
 
 @if $responsive
   // desktop helpers
-  .desktop-only
+  .d1
     display: block
-  @if $inline-conditional-helpers
-    span.desktop-only
+  //@if $inline-conditional-helpers
+    span.d1
       display: inline
-  .hide-on-desktop
+  //.hide-on-desktop
   // ipad helpers
-  .ipad-only
+  .i1
     display: none !important
-  .hide-on-ipad
+  //.hide-on-ipad
   // small tablet helpers
-  .small-tablet-only
+  .t1
     display: none !important
-  .hide-on-small-tablet
+  //.hide-on-tablet
   // mobile helpers
-  .mobile-only
+  .m1
     display: none !important
-  .hide-on-mobile
+  //.hide-on-mobile

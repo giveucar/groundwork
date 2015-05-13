@@ -44,7 +44,7 @@ class ResponsiveNavigation
 $ ->
 
   mouseBindings = -> # needs more <3
-    $('body').on 'mouseenter', '.nav:not(.vertical) li[role="menu"]', (e) ->
+    $('.nav').on 'mouseenter', '.nav:not(.vertical) li[role="menu"]', (e) ->
       $('.nav:not(.vertical)').not(@).each ->
         unless $(@).find('button.hamburger').is(':visible')
           $(@).find('ul[aria-expanded="true"]').attr('aria-expanded', 'false')
@@ -55,14 +55,15 @@ $ ->
         targetMenu = $(e.target).parents('li[role="menu"]').children('ul')
         targetMenu.attr('aria-expanded', 'true')
 
-    $('body').on 'mouseleave', '.nav:not(.vertical) li[role="menu"]', (e) ->
+    $('.nav').on 'mouseleave', '.nav:not(.vertical) li[role="menu"]', (e) ->
       unless $(@).parents('.nav').find('button.hamburger').is(':visible')
         window.delayMenuClose = setTimeout( =>
           $(@).find('ul[aria-expanded="true"]').attr('aria-expanded', 'false')
         , 500)
 
+  ###
   touchBindings = ->
-    $('body').on 'click', '.nav li[role="menu"] > a,
+    $('.nav').on 'click', '.nav li[role="menu"] > a,
                            .nav li[role="menu"] > button', (e) ->
       list = $(@).siblings('ul')
       menu = $(@).parent('[role="menu"]')
@@ -79,7 +80,7 @@ $ ->
         menu.find('[aria-expanded="true"]').attr('aria-expanded', 'false')
       e.preventDefault()
 
-    $('body').on 'click', '.nav button.hamburger', (e) ->
+    $('.nav').on 'click', '.nav button.hamburger', (e) ->
       list = $(@).siblings('ul')
       if list.attr('aria-expanded') != 'true'
         list.attr('aria-expanded', 'true')
@@ -88,13 +89,16 @@ $ ->
         list.find('[aria-pressed="true"]').attr('aria-pressed', 'false')
         list.find('[aria-expanded="true"]').attr('aria-expanded', 'false')
       e.preventDefault()
+  ###
 
-  responsiveNavigationElements = []
+  setTimeout( =>
+    responsiveNavigationElements = []
 
-  $('.nav').each ->
-    responsiveNavigationElements.push( new ResponsiveNavigation(@) )
+    $('.nav').each ->
+      responsiveNavigationElements.push( new ResponsiveNavigation(@) )
 
-  # initialize bindings
-  touchBindings()
-  unless Modernizr.touch
+    # initialize bindings
+    #touchBindings()
+    #unless Modernizr.touch
     mouseBindings()
+  , 1000)

@@ -10,6 +10,7 @@
 // =============================================
 
 // file paths
+$root_path:                    "/bc/groundworkcss/"
 // $root_path:                 "../"; // path to HTML document root (relative from CSS)
 // $images_path:               "images/"; // path to images (relative from $root_path)
 // $fonts_path:                "fonts/"; // path to fonts (relative from $root_path)
@@ -182,7 +183,7 @@
 // $iphone5:                   "(min-device-width: 320px) and (max-device-width: 568px)";
 // $mobile:                    "(max-width: 480px)";
 // $not-mobile:                "(min-width: 481px)";
-// $small-tablet:              "(max-width: 767px)";
+// $tablet:              "(max-width: 767px)";
 // $tablet:                    "(min-width: 768px)";
 // $ipad:                      "(min-width: 768px) and (max-width:1024px)";
 // $retina-ipad:               "(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2)";
@@ -206,7 +207,7 @@
 // $button-classes:            true;
 // $button-modifiers:          "small" "large" "on" "active" "square" "round" "block";
 // $button-states:             "on" "active" "selected" "pressed" "disabled" "info" "alert" "warning" "error" "success" "question";
-// $aria-selectors:            true;
+$aria-selectors:           false
 // $aria-states:               "selected" "pressed" "disabled" "readonly" "invalid";
 
 // =============================================
@@ -267,7 +268,7 @@
 // $quote-background:          $border-color;
 // $quote-font:                "source-sans-pro";
 // $styled-lists:              true;
-// $multi-column-classes:      true;
+$multi-column-classes:      false
 // $multi-column-names:        "one-column" "two-column" "three-column" "four-column" "five-column";
 // $ui-states:                 "info"  "alert" "warning" "error" "success" "question";
 // $ui-icons:                  "\f05a" "\f06a" "\f071"   "\f057" "\f058"   "\f059";
@@ -295,14 +296,15 @@
 
 // helpers
 // $positioning-classes:       true;
-// $spacer-classes:            true;
-// $spacer-helpers:            "padded" "pad-top" "pad-right" "pad-bottom" "pad-left"
+$spacer-classes:            true
+$spacer-helpers:            "pad"
+//								"pad-top" "pad-right" "pad-bottom" "pad-left"
 //                             "gapped" "gap-top" "gap-right" "gap-bottom" "gap-left"
 //                             "offset" "offset-top" "offset-right" "offset-bottom" "offset-left";
-// $spacer-mod-classes:        true;
-// $spacer-modifiers:          "half" "double" "triple";
-// $size-classes:              true;
-// $size-helpers:              "small" "medium" "large";
+$spacer-mod-classes:        true
+$spacer-modifiers:          "half" "double"
+$size-classes:              false
+$size-helpers:              "small" "large"
 // $layout-classes:            true;
 // $layout-helpers:            "inline" "inline-block" "block"
 //                             "hidden"
@@ -316,9 +318,9 @@
 // $border-helpers:            "bordered" "border-right" "border-left" "border-top" "border-bottom";
 // $radius-classes:            true;
 // $radius-helpers:            "square" "round";
-// $rotation-classes:          true;
+$rotation-classes:          false
 // $rotation-helpers:          "rotate-90" "rotate-90-ctr" "rotate-180" "rotate-180-ctr" "rotate-270" "rotate-270-ctr" "rotate-360" "rotate-360-ctr";
-// $transition-classes:        true;
+$transition-classes:        false
 
 // =============================================
 //                  CSS Reset

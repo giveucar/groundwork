@@ -1,13 +1,13 @@
 # Set this to the root of your project
 http_path = "/"
 css_dir = "css"
-sass_dir = "src/sass"
+sass_dir = "src/sass/"
 images_dir = "images"
 javascripts_dir = "js"
 fonts_dir = "fonts"
 
 output_style = :expanded
-environment = :development
+environment = :production
 
 # To enable debug info. Uncomment:
 # if environment != :production
